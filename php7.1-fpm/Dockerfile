@@ -26,7 +26,8 @@ RUN apt-get update && apt-get install -y php7.1\
 #setup fpm
 RUN sed -i "s/display_errors = Off/display_errors = stderr/" /etc/php/7.1/fpm/php.ini && \
     sed -i -e "s/;daemonize\s*=\s*yes/daemonize = no/g" /etc/php/7.1/fpm/php-fpm.conf && \
-    sed -i '/^listen = /clisten = 9000' /etc/php/7.1/fpm/pool.d/www.conf
+#    sed -i '/^listen = /clisten = 9000' /etc/php/7.1/fpm/pool.d/www.conf && \ # for port
+    echo 'kek'
 
 #turn off xdebug (for prod)
 RUN mv /etc/php/7.1/mods-available/xdebug.ini /etc/php/7.1/mods-available/xdebug
