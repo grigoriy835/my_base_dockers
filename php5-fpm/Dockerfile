@@ -26,7 +26,7 @@ RUN apt-get update && apt-get install -y\
 
 RUN sed -i "s/display_errors = Off/display_errors = stderr/" /etc/php5/fpm/php.ini && \
     sed -i -e "s/;daemonize\s*=\s*yes/daemonize = no/g" /etc/php5/fpm/php-fpm.conf && \
-#    sed -i '/^listen = /clisten = 9000' /etc/php/7.1/fpm/pool.d/www.conf && \
+#    sed -i '/^listen = /clisten = 9000' /etc/php5/fpm/pool.d/www.conf && \
     echo 'kek'
 
 RUN mv /etc/php5/mods-available/xdebug.ini /etc/php5/mods-available/xdebug
