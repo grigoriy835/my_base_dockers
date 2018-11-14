@@ -14,6 +14,7 @@ run make install
 
 WORKDIR /usr/local/nginx
 RUN rm -Rf /nginx
+COPY http_config /http_config
 
 RUN ln -sf /dev/stdout /usr/local/nginx/logs/access.log \
     && ln -sf /dev/stderr /usr/local/nginx/logs/error.log
